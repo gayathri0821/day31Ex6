@@ -1,0 +1,65 @@
+package march31;
+
+public class Ex1f 
+{
+	//create data members
+			private int customerid;
+			private String customername;
+			private static String customeraddress;
+			private long creditcardnumber;
+			private long mobilenumber;
+			private String productname;
+			private static double price;
+			private int quantity;
+		//create parametarized constructor
+			public Ex1f(int customerid, String customername, String customeraddress, long creditcardnumber,long mobilenumber, String productname,
+					double price, int quantity) 
+			{
+				super();
+				this.customerid = customerid;
+				this.customername = customername;
+				this.customeraddress = customeraddress;
+				this.creditcardnumber = creditcardnumber;
+				this.mobilenumber=mobilenumber;
+				this.productname = productname;
+				this.price = price;
+				this.quantity = quantity;
+			}
+			//copy constuctor
+			public Ex1f(Ex1f e) 
+			{
+				super();
+				this.customerid=e.customerid;
+				this.customername=e.customername;
+				this.customeraddress=e.customeraddress;
+				this.creditcardnumber=e.creditcardnumber;
+				this.mobilenumber=e.mobilenumber;
+				this.productname=e.productname;
+				this.price=e.price;
+				this.quantity=e.quantity;
+				//shallow copy
+				
+			}
+
+			public static void main(String args[])
+		{
+			Ex1f o1=new Ex1f(1,"RAM","GUNTUR",756348322,798960112,"rice",50.0,2);
+			
+			Ex1f o2=new Ex1f(o1);
+			o2.displaydetails();
+				
+		}
+		
+		public void displaydetails() 
+		{
+			System.out.println();
+			System.out.println("customer details are:");
+			System.out.println("customer id:"+customerid+"\ncustomername:"+customername+"\ncustomeraddress:"+customeraddress+"\ncreditcardnumber:"+creditcardnumber+"\nmobilenumber:"+mobilenumber+"\nproductname:"+productname+"\nquantity:"+quantity+"\nprice:"+price);	
+		}
+
+	}
+
+
+
+
+
